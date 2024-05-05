@@ -44,7 +44,7 @@ function AllConversations() {
             )
         }else{
            return (
-            <div className="feedback_container_2">
+            <div className="feedback_container-2">
                 <p className="feedback_text">FeedBack: <span className="feedback_text-2">{item.feedback}</span></p>
             </div>
            )

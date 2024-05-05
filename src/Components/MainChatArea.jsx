@@ -25,7 +25,7 @@ function MainChatArea() {
         let userFeedback = {
           feedback : feedback,
         }
-        setAllConversationData([...chatData, userFeedback]);
+        setAllConversationData((prevChatData) => [...prevChatData, ...chatData,userFeedback]);
         setFeedback('');
         setChatData([]);
       }
