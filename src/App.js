@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import MainChatArea from './Components/MainChatArea';
+import PastConversation from './Components/PastConversation';
+import { MyContextProvider } from './Components/MyContext';
+import {Routes,Route} from 'react-router-dom'
+import MainContainer from './Components/MainContainer';
+import AllConversations from './Components/AllConversations';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContextProvider>
+      <Routes>
+        <Route path='/' element={<MainContainer />}>
+        <Route path='' element={<MainChatArea />}>
+          </Route>
+        <Route path='allConversations' element={<AllConversations />}>
+          </Route>
+        </Route>
+      </Routes>
+    </MyContextProvider>
   );
 }
 
